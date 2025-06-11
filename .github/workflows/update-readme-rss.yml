@@ -1,9 +1,13 @@
 name: 🕵️‍♂️ Fetch upstream README and generate RSS
 
+# 显式给 GITHUB_TOKEN 写入仓库内容的权限
+permissions:
+  contents: write
+
 on:
   schedule:
-    - cron: '0 * * * *'     # 每小时整点执行一次
-  workflow_dispatch:       # 支持手动触发
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
   build-feed:
@@ -13,8 +17,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          # 显式指定使用 GITHUB_TOKEN，保证能推送
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
           persist-credentials: true
 
+      # …（下面脚本不变）…
       - name: Fetch upstream README.md
         run: |
           curl -sL https://raw.githubusercontent.com/tmgthb/Autonomous-Agents/main/README.md > current.md

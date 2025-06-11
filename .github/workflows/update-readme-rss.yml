@@ -1,0 +1,67 @@
+name: 🕵️‍♂️ Fetch upstream README and generate RSS
+
+on:
+  schedule:
+    # 每小时整点执行一次；也可以改成 “0 0 * * *”（每天）或其他 cron 表达式
+    - cron: '0 * * * *'
+  workflow_dispatch:   # 手动触发
+
+jobs:
+  build-feed:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出你自己这个仓库的代码
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true  # 让后面可以 git push
+
+      # 2. 拉取目标项目的最新 README.md
+      - name: Fetch upstream README.md
+        run: |
+          curl -sL \
+            https://raw.githubusercontent.com/tmgthb/Autonomous-Agents/main/README.md \
+            > current.md
+
+      # 3. 对比上一次的版本，若无改动则跳过
+      - name: Compare with previous
+        run: |
+          PREV=docs/last.md
+          if [ -f "$PREV" ] && cmp -s current.md "$PREV"; then
+            echo "No change, skipping."
+            exit 0
+          fi
+
+      # 4. 生成 RSS 文件到 docs/README.xml
+      - name: Generate RSS feed
+        run: |
+          NOW=$(date -u +"%a, %d %b %Y %H:%M:%S GMT")
+          CONTENT=$(sed 's/]]>/]]]]><![CDATA[>/g' current.md)
+          cat > docs/README.xml <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Autonomous-Agents/README.md 更新</title>
+  <link>https://github.com/tmgthb/Autonomous-Agents/blob/main/README.md</link>
+  <description>订阅 tmgthb/Autonomous-Agents README 全文更新</description>
+  <item>
+    <title>更新于 $NOW</title>
+    <pubDate>$NOW</pubDate>
+    <guid isPermaLink="false">README-$NOW</guid>
+    <description><![CDATA[
+$CONTENT
+    ]]></description>
+  </item>
+</channel>
+</rss>
+EOF
+          # 保存本次原文，供下次比对
+          cp current.md docs/last.md
+
+      # 5. 提交并推送这些变化
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/README.xml docs/last.md
+          git diff --quiet || git commit -m "📝 自动更新 upstream README RSS" && git push

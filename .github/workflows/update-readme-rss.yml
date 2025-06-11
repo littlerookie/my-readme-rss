@@ -59,9 +59,17 @@ jobs:
           EOF
           cp current.md docs/last.md
 
-      - name: Commit & Push
+      - name: Commit & Push RSS
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/README.xml docs/last.md
-          git diff --quiet || git commit -m "📝 自动更新 upstream README RSS" && git push
+
+          # 如果暂存区里有改动，就 commit & push
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "📝 自动更新 upstream README RSS"
+            git push
+          fi
+

@@ -21,13 +21,13 @@ Copyright (C) Teemu Maatta.
 </div>
 
 <p align="center">
-  <img height="100" src="https://raw.githubusercontent.com/tmgthb/Autonomous-Agents/main/Autonomous_agent_logo.png" alt="Autonomous Agents">
+  <img height="100" src="https://github.com/tmgthb/Autonomous-Agents/blob/main/resources/Autonomous_agent_logo.png" alt="Autonomous Agents">
 </p>
 
 <div align="center">
 
   # Autonomous Agents
-  Autonomous Agents-[research papers](https://github.com/tmgthb/Autonomous-Agents/blob/main/README.md). Updated daily. [Resources-section](https://github.com/tmgthb/Autonomous-Agents/blob/main/Autonomous_Agents_Resources.md)-section. 
+  Autonomous Agents-[research papers](https://github.com/tmgthb/Autonomous-Agents). Updated daily. [Resources-section](https://github.com/tmgthb/Autonomous-Agents/blob/main/resources/Autonomous_Agents_Resources.md)-section. 
 
 </div>
 
@@ -38,7 +38,8 @@ Copyright (C) Teemu Maatta.
 
 ## Research papers
 
-[2025](https://github.com/tmgthb/Autonomous-Agents/blob/main/Autonomous_Agents_Research_Papers_2025.md), [2024](https://github.com/tmgthb/Autonomous-Agents/blob/main/Autonomous_Agents_Research_Papers_2024.md), [2023](https://github.com/tmgthb/Autonomous-Agents/blob/main/Autonomous_Agents_Research_Papers_2023.md), [Earlier](https://github.com/tmgthb/Autonomous-Agents/blob/main/Autonomous_Agents_Research_Papers_Earlier.md),
+[2025](https://github.com/tmgthb/Autonomous-Agents/blob/main/resources/Autonomous_Agents_Research_Papers_2025.md), [2024](https://github.com/tmgthb/Autonomous-Agents/blob/main/resources/Autonomous_Agents_Research_Papers_2024.md), [2023](https://github.com/tmgthb/Autonomous-Agents/blob/main/resources/Autonomous_Agents_Research_Papers_2023.md), [Earlier](https://github.com/tmgthb/Autonomous-Agents/blob/main/resources/Autonomous_Agents_Research_Papers_Earlier.md)
+
 
 
 </div>

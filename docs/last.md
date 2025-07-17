@@ -2748,9 +2748,16 @@ Chronological order.
 
 ---
 
+#### 20th of June 2025
 
+[Kimi-Researcher
+End-to-End RL Training for Emerging Agentic Capabilities](https://moonshotai.github.io/Kimi-Researcher/)
 
+- Kimi-Researcher: introduces an autonomous agent with multi-turn search and reasoning.
+- Trained on end-to-end agentic RL using REINFORCE-algorithm.
+- Designs a context management ystem to retain important information while discarding unnecessary documents.
 
+---
 
 #### 18th June 2025
 
@@ -16835,6 +16842,14 @@ LocAgent: Graph-Guided LLM Agents for Code Localization](http://arxiv.org/abs/25
 
 
 #### 18th February 2025
+
+[MOBA: MIXTURE OF BLOCK ATTENTION FOR LONG-CONTEXT LLMS](https://arxiv.org/abs/2502.13189)
+
+- MOBA (Mixture of Block Attention): introduces a novel attention architecture applying Mixture of Experts (MoE) principles to the attention mechanism, enabling dynamic selection of relevant key and value blocks for long-context LLMs.
+- This framework partitions the context into blocks and uses a gating mechanism to selectively route query tokens to the most relevant blocks, significantly reducing computational costs.
+- MOBA seamlessly transitions between full and sparse attention, enhancing efficiency without compromising performance and demonstrating superior performance on long-context tasks.
+
+---
 
 [Towards an AI co-scientist](https://storage.googleapis.com/coscientist_paper/ai_coscientist.pdf)
 

@@ -5,9 +5,9 @@
   <link>https://github.com/tmgthb/Autonomous-Agents/blob/main/README.md</link>
   <description>订阅 tmgthb/Autonomous-Agents README 全文更新</description>
   <item>
-    <title>更新于 Sun, 21 Sep 2025 17:02:25 GMT</title>
-    <pubDate>Sun, 21 Sep 2025 17:02:25 GMT</pubDate>
-    <guid isPermaLink="false">README-Sun, 21 Sep 2025 17:02:25 GMT</guid>
+    <title>更新于 Sun, 21 Sep 2025 18:02:36 GMT</title>
+    <pubDate>Sun, 21 Sep 2025 18:02:36 GMT</pubDate>
+    <guid isPermaLink="false">README-Sun, 21 Sep 2025 18:02:36 GMT</guid>
     <description><![CDATA[
 <!--Autonomous Agents -->
 <!--
@@ -167,9 +167,8 @@ Chronological order.
 
 [MILLSTONE: How Open-Minded Are LLMs?](http://arxiv.org/abs/2509.11967)
 
-MILLSTONE: introduces a benchmark to systematically measure LLM open-mindedness to in-context arguments on controversial issues, utilizing a neutral prompt, varied argument configurations, and a stance classifier.</
-
--The benchmark evaluates how LLMs change their output stance on debatable issues when presented with human-written, non-adversarial arguments from authoritative sources.
+- MILLSTONE: introduces a benchmark to systematically measure LLM open-mindedness to in-context arguments on controversial issues, utilizing a neutral prompt, varied argument configurations, and a stance classifier.
+- The benchmark evaluates how LLMs change their output stance on debatable issues when presented with human-written, non-adversarial arguments from authoritative sources.
 - It reveals that LLMs are generally open-minded, with their stances significantly influenced by external arguments, highlighting potential vulnerabilities to information source manipulation.
 
 ---
